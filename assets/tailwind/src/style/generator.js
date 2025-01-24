@@ -7,7 +7,8 @@ const SCHEMA_URL =
 function generateVariableName(token) {
   const sanitizedPath = token.path
     .filter(
-      (segment) => !["colors", "themes", "light", "dark"].includes(segment)
+      (segment) =>
+        !["global", "colors", "themes", "light", "dark"].includes(segment)
     ) // Remove unwanted prefixes
     .join("-");
   return `--${sanitizedPath.toLowerCase()}`;
