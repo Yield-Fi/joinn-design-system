@@ -44,7 +44,7 @@ Update your `package.json` scripts to include a command for generating tokens an
 
 ```json
 "scripts": {
-  "generate:tokens": "node ./src/style/generator.js",
+  "generate:tokens": "node ./src/generators/styleGenerator.js",
   "dev": "yarn run generate:tokens && vite --host",
   "build": "yarn run generate:tokens && tsc && vite build"
 }
@@ -104,7 +104,7 @@ Ensure the generated CSS files are included and imported into your `index.css`:
 :root {
   --typography-fonts-base: Overpass, Arial, sans-serif;
   --typography-fonts-heading: Roboto, Helvetica, sans-serif;
-  --typography-fonts-mono: 'Fira Code', 'Courier New', monospace;
+  --typography-fonts-mono: "Fira Code", "Courier New", monospace;
   --typography-sizes-xs: 12px;
   --typography-sizes-sm: 14px;
   --typography-sizes-base: 16px;
