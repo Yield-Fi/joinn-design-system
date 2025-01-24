@@ -28,13 +28,13 @@ The Joinn Design System setup includes the following files:
 
 - **`index.css`**: Tailwind’s main CSS file that imports the generated design tokens.
 - **`tailwind.config.js`**: Tailwind configuration extended with Joinn Design System tokens.
-- **`generator.js`**: A script to generate `global.css`, `lightMode.css`, and `darkMode.css` from `tokens.json`.
+- **`styleGenerator.js`**: A script to generate `global.css`, `lightMode.css`, and `darkMode.css` from `tokens.json`.
 
 You can find these files in the project repository:
 
 - [**`index.css`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/assets/tailwind/src/index.css)
 - [**`tailwind.config.js`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/assets/tailwind/tailwind.config.js)
-- [**`generator.js`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/assets/tailwind/src/style/generator.js)
+- [**`styleGenerator.js`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/assets/tailwind/src/generators/styleGenerator.js)
 
 ---
 
@@ -60,13 +60,13 @@ Update your `package.json` scripts to include a command for generating tokens an
 
 ### **4. Token Generation**
 
-The `generator.js` script generates three CSS files:
+The `styleGenerator.js` script generates three CSS files:
 
 - **`dist/css/global.css`**: Contains global variables (e.g., typography, spacing).
 - **`dist/css/lightMode.css`**: Contains light mode-specific variables.
 - **`dist/css/darkMode.css`**: Contains dark mode-specific variables.
 
-If you want to change the output directory (currently set to `dist/`), update the `buildPath` in **`generator.js`**.
+If you want to change the output directory (currently set to `dist/`), update the `buildPath` in **`styleGenerator.js`**.
 
 ---
 
