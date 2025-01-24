@@ -11,32 +11,32 @@
 @layer base {
   /* Global Font Styles */
   body {
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-normal);
-    color: var(--text-primary);
+    font-family: var(--typography-fonts-base);
+    font-size: var(--typography-sizes-base);
+    line-height: var(--typography-lineheights-normal);
+    color: var(--typography-text-primary);
   }
 
   h1 {
-    font-family: var(--font-family-heading);
-    font-size: var(--font-size-3xl);
-    font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-heading);
-    color: var(--text-primary);
+    font-family: var(--typography-fonts-heading);
+    font-size: var(--typography-sizes-3xl);
+    font-weight: var(--typography-weights-bold);
+    line-height: var(--typography-lineheights-heading);
+    color: var(--typography-text-primary);
   }
 
   h2 {
-    font-family: var(--font-family-heading);
-    font-size: var(--font-size-2xl);
-    font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-heading);
-    color: var(--text-primary);
+    font-family: var(--typography-fonts-heading);
+    font-size: var(--typography-sizes-2xl);
+    font-weight: var(--typography-weights-bold);
+    line-height: var(--typography-lineheights-heading);
+    color: var(--typography-text-primary);
   }
 
   p {
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-normal);
-    color: var(--text-primary);
+    font-size: var(--typography-sizes-base);
+    line-height: var(--typography-lineheights-normal);
+    color: var(--typography-text-primary);
   }
 
   ul,
@@ -46,9 +46,9 @@
   }
 
   code {
-    font-family: var(--font-family-mono);
-    font-size: var(--font-size-sm);
-    color: var(--text-primary);
+    font-family: var(--typography-fonts-mono);
+    font-size: var(--typography-sizes-sm);
+    color: var(--typography-text-primary);
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
   }
