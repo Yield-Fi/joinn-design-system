@@ -98,17 +98,27 @@ If you want to change the output directory (currently set to `dist/`), update th
 
 Ensure the generated CSS files are included and imported into your `index.css`:
 
-#### Example `index.css`:
+#### Example `./dist/css/global.css`:
 
 ```css
-/* Include generated design tokens */
-@import "./dist/css/global.css";
-@import "./dist/css/lightMode.css";
-@import "./dist/css/darkMode.css";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --typography-fonts-base: Overpass, Arial, sans-serif;
+  --typography-fonts-heading: Roboto, Helvetica, sans-serif;
+  --typography-fonts-mono: 'Fira Code', 'Courier New', monospace;
+  --typography-sizes-xs: 12px;
+  --typography-sizes-sm: 14px;
+  --typography-sizes-base: 16px;
+  --typography-sizes-lg: 18px;
+  --typography-sizes-xl: 20px;
+  --typography-sizes-2xl: 24px;
+  --typography-sizes-3xl: 30px;
+  --typography-weights-normal: 400;
+  --typography-weights-medium: 500;
+  --typography-weights-bold: 700;
+  --typography-lineheights-normal: 1.25rem;
+  --typography-lineheights-heading: 1.1rem;
+  --typography-lineheights-tight: 1rem;
+}
 ```
 
 ---
