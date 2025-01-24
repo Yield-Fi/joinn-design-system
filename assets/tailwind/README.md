@@ -34,7 +34,7 @@ You can find these files in the project repository:
 
 - [**`index.css`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/assets/tailwind/src/index.css)
 - [**`tailwind.config.js`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/assets/tailwind/tailwind.config.js)
-- [**`generator.js`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/assets/tailwind/src/style/transformer.js)
+- [**`generator.js`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/assets/tailwind/src/style/generator.js)
 
 ---
 
