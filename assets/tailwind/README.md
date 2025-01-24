@@ -101,14 +101,14 @@ Ensure the generated CSS files are included and imported into your `index.css`:
 #### Example `index.css`:
 
 ```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Include generated design tokens */
 @import "./dist/css/global.css";
 @import "./dist/css/lightMode.css";
 @import "./dist/css/darkMode.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
 ---
