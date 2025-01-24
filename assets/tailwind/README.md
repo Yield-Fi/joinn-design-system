@@ -1,4 +1,4 @@
-### **README.md**
+# HOWTO: Install Joinn Design System
 
 This README provides instructions for setting up the **Joinn Design System** with **Tailwind CSS** in your Vite project. The setup ensures consistent and scalable theming using dynamically generated CSS variables.
 
