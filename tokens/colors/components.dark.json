@@ -1,7 +1,5 @@
 {
   "colors": {
-    "$type": "color",
-
     "button": {
       "primary": {
         "bg": { "$value": "{colors.background.primary.$value}" },
@@ -41,9 +39,11 @@
     },
 
     "progress": {
-      "bg": { "$value": "{colors.grey.100.$value}" },
-      "fill": { "$value": "{colors.blue.100.$value}" },
-      "hover": { "$value": "{colors.blue.200.$value}" },
+      "primary": {
+        "bg": { "$value": "{colors.grey.100.$value}" },
+        "fill": { "$value": "{colors.blue.100.$value}" },
+        "hover": { "$value": "{colors.blue.200.$value}" }
+      },
       "success": {
         "bg": { "$value": "{colors.grey.200.$value}" },
         "fill": { "$value": "{colors.green.100.$value}" },

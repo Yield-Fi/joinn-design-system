@@ -2,6 +2,16 @@ import StyleDictionary from "style-dictionary";
 import fs from "fs";
 import path from "path";
 
+const BOLD = "\x1b[1m";
+const GREEN = "\x1b[32m";
+const RESET = "\x1b[0m";
+
+const logger = {
+  success(message) {
+    console.log(`${BOLD}${GREEN}✔ ${message}${RESET}`);
+  },
+};
+
 // --------------------------
 // 1) Clean Output Directory
 // --------------------------
@@ -9,13 +19,13 @@ function cleanDist() {
   const distDir = path.resolve("build/tailwind");
   try {
     fs.rmSync(distDir, { recursive: true, force: true });
-    console.log(`Removed ${distDir}`);
+    console.info(`Removed ${distDir}`);
   } catch (err) {
-    console.log(`No existing ${distDir} to remove`, err);
+    console.error(`No existing ${distDir} to remove`, err);
   }
 
   fs.mkdirSync(distDir, { recursive: true });
-  console.log(`Created fresh ${distDir}`);
+  logger.success(`Created fresh ${distDir}`);
 }
 
 // --------------------------
@@ -190,7 +200,9 @@ async function buildTokens() {
   {
     console.log("Building base theme...");
     const SD = new StyleDictionary({
-      source: ["tokens/**/*.json", "!tokens/**/*.dark.json"],
+      source: [
+        "tokens/**/!(*.dark).json", // all .json files that do NOT end with .dark.json
+      ],
       log: { verbosity: "verbose" },
       platforms: {
         base: {
@@ -222,14 +234,16 @@ async function buildTokens() {
       },
     });
     SD.buildAllPlatforms();
-    console.log("Base theme built!\n");
+    logger.success("Base theme built!");
   }
 
   // Dark
   {
     console.log("Building dark theme...");
     const SD = new StyleDictionary({
-      source: ["!tokens/**/*.json", "tokens/**/*.dark.json"],
+      source: [
+        "tokens/**/*(*.dark).json", // only dark files
+      ],
       log: { verbosity: "verbose" },
       platforms: {
         base: {
@@ -246,10 +260,10 @@ async function buildTokens() {
       },
     });
     SD.buildAllPlatforms();
-    console.log("Dark theme built!\n");
+    logger.success("Dark theme built!");
   }
 
-  console.log("All builds finished!");
+  logger.success("All builds finished!");
 }
 
 buildTokens().catch((err) => {

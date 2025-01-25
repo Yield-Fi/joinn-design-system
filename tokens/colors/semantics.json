@@ -1,10 +1,9 @@
 {
   "colors": {
-    "$type": "color",
     "background": {
       "primary": { "$value": "{colors.white.100.$value}" },
       "secondary": { "$value": "{colors.white.200.$value}" },
-      "tertiary": { "$value": "{colors.grey.200.$value}" }
+      "inverse": { "$value": "{colors.black.100.$value}" }
     },
     "text": {
       "primary": { "$value": "{colors.black.100.$value}" },
