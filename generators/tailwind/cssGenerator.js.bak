@@ -8,7 +8,7 @@ function generateVariableName(token) {
   const sanitizedPath = token.path
     .filter(
       (segment) =>
-        !["global", "colors", "themes", "light", "dark"].includes(segment)
+        !["global", "colors", "themes", "light", "dark"].includes(segment),
     ) // Remove unwanted prefixes
     .join("-");
   return `--${sanitizedPath.toLowerCase()}`;

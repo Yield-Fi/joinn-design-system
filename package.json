@@ -9,6 +9,6 @@
   },
   "scripts": {
     "generate": "yarn generate:tailwind",
-    "generate:tailwind": "node ./assets/tailwind/src/generators/tailwindGenerator.js --verbose"
+    "generate:tailwind": "node ./generators/tailwind/tailwindGenerator.js"
   }
 }

@@ -1,16 +1,7 @@
 import StyleDictionary from "style-dictionary";
 import fs from "fs";
 import path from "path";
-
-const BOLD = "\x1b[1m";
-const GREEN = "\x1b[32m";
-const RESET = "\x1b[0m";
-
-const logger = {
-  success(message) {
-    console.log(`${BOLD}${GREEN}✔ ${message}${RESET}`);
-  },
-};
+import { logger } from "../../utils/logger.js";
 
 // --------------------------
 // 1) Clean Output Directory
