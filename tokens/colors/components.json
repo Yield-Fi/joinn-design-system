@@ -1,0 +1,57 @@
+{
+  "color": {
+    "$type": "color",
+    "button": {
+      "primary": {
+        "bg": { "$value": "{color.background.primary.$value}" },
+        "hover": { "$value": "{color.background.secondary.$value}" },
+        "text": { "$value": "{color.text.primary.$value}" }
+      },
+      "secondary": {
+        "bg": { "$value": "{color.background.secondary.$value}" },
+        "hover": { "$value": "{color.white.300.$value}" },
+        "text": { "$value": "{color.text.primary.$value}" }
+      },
+      "accent": {
+        "bg": { "$value": "{color.blue.100.$value}" },
+        "hover": { "$value": "{color.blue.200.$value}" },
+        "text": { "$value": "{color.white.100.$value}" }
+      },
+      "success": {
+        "bg": { "$value": "{color.green.100.$value}" },
+        "hover": { "$value": "{color.green.200.$value}" },
+        "text": { "$value": "{color.white.100.$value}" }
+      },
+      "error": {
+        "bg": { "$value": "{color.red.100.$value}" },
+        "hover": { "$value": "{color.red.200.$value}" },
+        "text": { "$value": "{color.white.100.$value}" }
+      },
+      "warning": {
+        "bg": { "$value": "{color.yellow.100.$value}" },
+        "hover": { "$value": "{color.yellow.200.$value}" },
+        "text": { "$value": "{color.black.100.$value}" }
+      },
+      "info": {
+        "bg": { "$value": "{color.blue.100.$value}" },
+        "hover": { "$value": "{color.blue.200.$value}" },
+        "text": { "$value": "{color.white.100.$value}" }
+      }
+    },
+    "progress": {
+      "bg": { "$value": "{color.grey.100.$value}" },
+      "fill": { "$value": "{color.blue.100.$value}" },
+      "hover": { "$value": "{color.blue.200.$value}" },
+      "success": {
+        "bg": { "$value": "{color.grey.200.$value}" },
+        "fill": { "$value": "{color.green.100.$value}" },
+        "hover": { "$value": "{color.green.200.$value}" }
+      },
+      "error": {
+        "bg": { "$value": "{color.grey.200.$value}" },
+        "fill": { "$value": "{color.red.100.$value}" },
+        "hover": { "$value": "{color.red.200.$value}" }
+      }
+    }
+  }
+}

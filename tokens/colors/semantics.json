@@ -1,0 +1,39 @@
+{
+  "color": {
+    "$type": "color",
+    "background": {
+      "primary": { "$value": "{color.white.100.$value}" },
+      "secondary": { "$value": "{color.white.200.$value}" },
+      "tertiary": { "$value": "{color.grey.200.$value}" }
+    },
+    "text": {
+      "primary": { "$value": "{color.black.100.$value}" },
+      "secondary": { "$value": "{color.grey.100.$value}" },
+      "tertiary": { "$value": "{color.grey.200.$value}" },
+      "accent": { "$value": "{color.blue.100.$value}" }
+    },
+    "surface": {
+      "primary": { "$value": "{color.white.200.$value}" },
+      "secondary": { "$value": "{color.white.100.$value}" }
+    },
+    "border": {
+      "primary": { "$value": "{color.grey.100.$value}" },
+      "secondary": { "$value": "{color.grey.200.$value}" },
+      "accent": { "$value": "{color.blue.100.$value}" }
+    },
+    "separator": {
+      "primary": { "$value": "{color.white.200.$value}" },
+      "secondary": { "$value": "{color.grey.200.$value}" }
+    },
+    "icon": {
+      "primary": { "$value": "{color.black.100.$value}" },
+      "muted": { "$value": "{color.grey.100.$value}" },
+      "accent": { "$value": "{color.blue.100.$value}" }
+    }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "default": { "$value": "0px 4px 8px rgba(0, 0, 0, 0.1)" },
+    "soft": { "$value": "0px 2px 4px rgba(0, 0, 0, 0.05)" }
+  }
+}

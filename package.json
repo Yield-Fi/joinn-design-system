@@ -1,0 +1,14 @@
+{
+  "name": "joinn-design-system",
+  "private": false,
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "sd-tailwindcss-transformer": "^2.1.0",
+    "style-dictionary": "^4.3.2"
+  },
+  "scripts": {
+    "generate": "yarn generate:tokens",
+    "generate:tokens": "node ./assets/tailwind/src/generators/tailwindGenerator.js --verbose"
+  }
+}

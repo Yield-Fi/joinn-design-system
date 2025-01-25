@@ -16,7 +16,7 @@
           "attributes": { "theme": "global" }
         }
       },
-      "sizes": {
+      "size": {
         "$type": "dimension",
         "xs": {
           "$value": "12px",
@@ -47,7 +47,7 @@
           "attributes": { "theme": "global" }
         }
       },
-      "weights": {
+      "weight": {
         "$type": "fontWeight",
         "normal": {
           "$value": "400",
