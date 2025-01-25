@@ -1,56 +1,56 @@
 {
-  "color": {
+  "colors": {
     "$type": "color",
     "button": {
       "primary": {
-        "bg": { "$value": "{color.background.primary.$value}" },
-        "hover": { "$value": "{color.background.secondary.$value}" },
-        "text": { "$value": "{color.text.primary.$value}" }
+        "bg": { "$value": "{colors.background.primary.$value}" },
+        "hover": { "$value": "{colors.background.secondary.$value}" },
+        "text": { "$value": "{colors.text.primary.$value}" }
       },
       "secondary": {
-        "bg": { "$value": "{color.background.secondary.$value}" },
-        "hover": { "$value": "{color.white.300.$value}" },
-        "text": { "$value": "{color.text.primary.$value}" }
+        "bg": { "$value": "{colors.background.secondary.$value}" },
+        "hover": { "$value": "{colors.white.300.$value}" },
+        "text": { "$value": "{colors.text.primary.$value}" }
       },
       "accent": {
-        "bg": { "$value": "{color.blue.100.$value}" },
-        "hover": { "$value": "{color.blue.200.$value}" },
-        "text": { "$value": "{color.white.100.$value}" }
+        "bg": { "$value": "{colors.blue.100.$value}" },
+        "hover": { "$value": "{colors.blue.200.$value}" },
+        "text": { "$value": "{colors.white.100.$value}" }
       },
       "success": {
-        "bg": { "$value": "{color.green.100.$value}" },
-        "hover": { "$value": "{color.green.200.$value}" },
-        "text": { "$value": "{color.white.100.$value}" }
+        "bg": { "$value": "{colors.green.100.$value}" },
+        "hover": { "$value": "{colors.green.200.$value}" },
+        "text": { "$value": "{colors.white.100.$value}" }
       },
       "error": {
-        "bg": { "$value": "{color.red.100.$value}" },
-        "hover": { "$value": "{color.red.200.$value}" },
-        "text": { "$value": "{color.white.100.$value}" }
+        "bg": { "$value": "{colors.red.100.$value}" },
+        "hover": { "$value": "{colors.red.200.$value}" },
+        "text": { "$value": "{colors.white.100.$value}" }
       },
       "warning": {
-        "bg": { "$value": "{color.yellow.100.$value}" },
-        "hover": { "$value": "{color.yellow.200.$value}" },
-        "text": { "$value": "{color.black.100.$value}" }
+        "bg": { "$value": "{colors.yellow.100.$value}" },
+        "hover": { "$value": "{colors.yellow.200.$value}" },
+        "text": { "$value": "{colors.black.100.$value}" }
       },
       "info": {
-        "bg": { "$value": "{color.blue.100.$value}" },
-        "hover": { "$value": "{color.blue.200.$value}" },
-        "text": { "$value": "{color.white.100.$value}" }
+        "bg": { "$value": "{colors.blue.100.$value}" },
+        "hover": { "$value": "{colors.blue.200.$value}" },
+        "text": { "$value": "{colors.white.100.$value}" }
       }
     },
     "progress": {
-      "bg": { "$value": "{color.grey.100.$value}" },
-      "fill": { "$value": "{color.blue.100.$value}" },
-      "hover": { "$value": "{color.blue.200.$value}" },
+      "bg": { "$value": "{colors.grey.100.$value}" },
+      "fill": { "$value": "{colors.blue.100.$value}" },
+      "hover": { "$value": "{colors.blue.200.$value}" },
       "success": {
-        "bg": { "$value": "{color.grey.200.$value}" },
-        "fill": { "$value": "{color.green.100.$value}" },
-        "hover": { "$value": "{color.green.200.$value}" }
+        "bg": { "$value": "{colors.grey.200.$value}" },
+        "fill": { "$value": "{colors.green.100.$value}" },
+        "hover": { "$value": "{colors.green.200.$value}" }
       },
       "error": {
-        "bg": { "$value": "{color.grey.200.$value}" },
-        "fill": { "$value": "{color.red.100.$value}" },
-        "hover": { "$value": "{color.red.200.$value}" }
+        "bg": { "$value": "{colors.grey.200.$value}" },
+        "fill": { "$value": "{colors.red.100.$value}" },
+        "hover": { "$value": "{colors.red.200.$value}" }
       }
     }
   }

@@ -8,7 +8,7 @@
     "style-dictionary": "^4.3.2"
   },
   "scripts": {
-    "generate": "yarn generate:tokens",
-    "generate:tokens": "node ./assets/tailwind/src/generators/tailwindGenerator.js --verbose"
+    "generate": "yarn generate:tailwind",
+    "generate:tailwind": "node ./assets/tailwind/src/generators/tailwindGenerator.js --verbose"
   }
 }
