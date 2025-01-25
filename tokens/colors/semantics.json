@@ -9,6 +9,7 @@
       "primary": { "$value": "{colors.black.100.$value}" },
       "secondary": { "$value": "{colors.grey.100.$value}" },
       "tertiary": { "$value": "{colors.grey.200.$value}" },
+      "inverse": { "$value": "{colors.white.200.$value}" },
       "accent": { "$value": "{colors.blue.100.$value}" }
     },
     "surface": {
