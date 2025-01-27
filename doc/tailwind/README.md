@@ -1,130 +1,129 @@
 # Installing Joinn Design System
 
-This README provides instructions for setting up the **Joinn Design System** with **Tailwind CSS** in your Vite project. The setup ensures consistent and scalable theming using dynamically generated CSS variables.
+This README provides instructions for integrating the **Joinn Design System** with **Tailwind CSS** in your project. The system outputs ready-to-use CSS files (for base and dark modes) plus a `tailwind.config.js`, ensuring consistent theming with minimal setup.
 
 ---
 
-## **Joinn Design System Setup for Vite and Tailwind**
+## 1. Obtain the Generated Artifacts
 
-Follow these steps to integrate the Joinn Design System into your Vite project.
+The Joinn Design System repository uses **Style Dictionary** to produce **four** key outputs in **`build/tailwind/`**:
+
+1. [**`base.css`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/base.css) – Contains global (light/base) CSS variables.
+2. [**`dark.css`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/dark.css) – Contains dark-mode CSS variables (using a `.dark` selector).
+3. [**`index.css`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/index.css) – Imports `base.css` and `dark.css` plus the Tailwind layers.
+4. [**`tailwind.config.js`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/tailwind.config.js) – A Tailwind configuration file referencing the generated tokens.
+
+You can **copy** these files directly from the Joinn Design System repo’s **`build/tailwind/`** folder into your own project or **consume** them in a package/bundler (depending on how you manage dependencies).
 
 ---
 
-### **1. Install Dependencies**
+## 2. Place or Reference the Files in Your Tailwind Setup
 
-Install the required dependencies:
+1. [**`index.css`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/index.css)
+
+   - This CSS file already imports `base.css` and `dark.css` at the top, then includes `@tailwind base; @tailwind components; @tailwind utilities;`.
+   - By default, it's auto-included under `src/` in the Joinn Design System, but if you want to manually include it, place `index.css` in your project’s `src/` folder (or wherever your main stylesheet resides).
+
+2. [**`tailwind.config.js`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/tailwind.config.js)
+   - The config extends Tailwind with the Joinn tokens. It’s set to `darkMode: "class"`.
+   - Place or reference this file as your primary Tailwind config when running your build or development server (e.g., `tailwindcss -c tailwind.config.js ...`).
+
+### Example Project Structure
 
 ```bash
-yarn add -D style-dictionary@^4.3.2
-```
-
-This will add **Style Dictionary** as a development dependency for generating CSS variables.
-
----
-
-### **2. Add Required Files**
-
-The Joinn Design System setup includes the following files:
-
-- **`index.css`**: Tailwind’s main CSS file that imports the generated design tokens.
-- **`tailwind.config.js`**: Tailwind configuration extended with Joinn Design System tokens.
-- **`styleGenerator.js`**: A script to generate `global.css`, `lightMode.css`, and `darkMode.css` from `tokens.json`.
-
-You can find these files in the project repository:
-
-- [**`index.css`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/assets/tailwind/src/index.css)
-- [**`tailwind.config.js`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/assets/tailwind/tailwind.config.js)
-- [**`styleGenerator.js`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/assets/tailwind/src/generators/styleGenerator.js)
-
----
-
-### **3. Add Commands to `package.json`**
-
-Update your `package.json` scripts to include a command for generating tokens and running the dev/build process, such as the below example:
-
-```json
-"scripts": {
-  "generate:tokens": "node ./src/generators/styleGenerator.js",
-  "dev": "yarn run generate:tokens && vite --host",
-  "build": "yarn run generate:tokens && tsc && vite build"
-}
-```
-
-#### Explanation of Commands:
-
-- **`generate:tokens`**: Generates CSS files (`global.css`, `lightMode.css`, `darkMode.css`) from [**`tokens.json`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/schema/tokens.json).
-- **`dev`**: Runs the token generator and starts the Vite development server.
-- **`build`**: Runs the token generator, compiles TypeScript, and builds the project for production.
-
----
-
-### **4. Token Generation**
-
-The `styleGenerator.js` script generates three CSS files:
-
-- **`dist/css/global.css`**: Contains global variables (e.g., typography, spacing).
-- **`dist/css/lightMode.css`**: Contains light mode-specific variables.
-- **`dist/css/darkMode.css`**: Contains dark mode-specific variables.
-
-If you want to change the output directory (currently set to `dist/`), update the `buildPath` in **`styleGenerator.js`**.
-
----
-
-### **5. Run the Setup**
-
-1. **Generate Tokens**:
-   Before running the app, generate the CSS variables:
-
-   ```bash
-   yarn run generate:tokens
-   ```
-
-2. **Start Development Server**:
-   Run the development server:
-
-   ```bash
-   yarn dev
-   ```
-
-3. **Build for Production**:
-   Build the project for production:
-   ```bash
-   yarn build
-   ```
-
----
-
-### **6. Verify the Setup**
-
-Ensure the generated CSS files are included and imported into your `index.css`:
-
-#### Example `./dist/css/global.css`:
-
-```css
-:root {
-  --typography-fonts-base: Overpass, Arial, sans-serif;
-  --typography-fonts-heading: Roboto, Helvetica, sans-serif;
-  --typography-fonts-mono: "Fira Code", "Courier New", monospace;
-  --typography-sizes-xs: 12px;
-  --typography-sizes-sm: 14px;
-  --typography-sizes-base: 16px;
-  --typography-sizes-lg: 18px;
-  --typography-sizes-xl: 20px;
-  --typography-sizes-2xl: 24px;
-  --typography-sizes-3xl: 30px;
-  --typography-weights-normal: 400;
-  --typography-weights-medium: 500;
-  --typography-weights-bold: 700;
-  --typography-lineheights-normal: 1.25rem;
-  --typography-lineheights-heading: 1.1rem;
-  --typography-lineheights-tight: 1rem;
-}
+my-project/
+  ├─ src/
+  │   └─ index.css           <-- Copied from build/tailwind/index.css
+  ├─ tailwind.config.js     <-- Copied from build/tailwind/tailwind.config.js
+  └─ ...
 ```
 
 ---
 
-### **Conclusion**
+## 3. Install Tailwind CSS and Necessary Dependencies
 
-With this setup, you now have a seamless integration of the Joinn Design System with Tailwind CSS in your Vite project. The generated CSS variables ensure consistent theming across global, light, and dark modes.
+Ensure you have Tailwind CSS installed in your project. If not, you can install it using the following commands:
 
-If you have any questions or need further assistance, feel free to reach out! 🚀
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+```
+
+If you're using a preconfigured `tailwind.config.js` from the Joinn Design System, replace the one generated by the above command with the `tailwind.config.js` file from the **Joinn Design System** repository.
+
+---
+
+## 4. Configure Your Project to Use the Joinn Design System
+
+To integrate the design system:
+
+1. Ensure `index.css` is included in your main entry file (e.g., `src/index.css` or equivalent).
+2. Use the `tailwind.config.js` file provided by Joinn to replace your default Tailwind configuration.
+3. Make sure your project’s build tool (e.g., Vite, Webpack, or Parcel) is correctly processing Tailwind CSS and PostCSS.
+
+---
+
+## 5. Add Dark Mode Support (Optional)
+
+The Joinn Design System uses the `class` strategy for dark mode. To enable it in your project:
+
+1. Add the `dark` class to your `html` or `body` tag to toggle dark mode.
+2. Example:
+
+   ```html
+   <html class="dark">
+     <body>
+       <div class="text-primary">Hello, dark mode!</div>
+     </body>
+   </html>
+   ```
+
+   You can programmatically toggle this class using JavaScript or frameworks like React, Vue, or Svelte, based on user preferences.
+
+---
+
+## 6. Customize the Design System (Optional)
+
+The `tailwind.config.js` file can be extended to include your custom configurations. For example:
+
+```javascript
+module.exports = {
+  ...require("./tailwind.config.js"),
+  content: ["./src/**/*.{js,ts,jsx,tsx,html}"],
+  theme: {
+    extend: {
+      colors: {
+        customColor: "#ff5733",
+      },
+    },
+  },
+};
+```
+
+This ensures that you maintain the Joinn Design System's tokens while adding your own customizations.
+
+---
+
+## 7. Verify Your Setup
+
+After completing the integration, verify that the design system is correctly applied by running your development server:
+
+```bash
+npm run dev
+```
+
+Check your components to ensure that styles and tokens are being applied as expected.
+
+---
+
+## 8. Additional Resources
+
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Joinn Design System GitHub Repository](https://github.com/your-repo-link)
+- [Style Dictionary Documentation](https://amzn.github.io/style-dictionary/)
+
+For further assistance, refer to the documentation or reach out to the Joinn team.
+
+---
+
+By following these steps, your project will be set up with the Joinn Design System and fully integrated with Tailwind CSS for consistent and customizable theming.
