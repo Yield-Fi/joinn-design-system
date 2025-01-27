@@ -182,12 +182,7 @@ async function buildTokens() {
         },
         tailwind: {
           transformGroup: "js",
-          transforms: [
-            "attribute/cti",
-            "name/cti/kebab",
-            "size/px",
-            "color/css",
-          ],
+          transforms: ["attribute/cti", "name/kebab", "size/px", "color/css"],
           buildPath: "build/tailwind/",
           files: [
             {
