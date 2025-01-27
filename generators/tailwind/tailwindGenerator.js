@@ -20,22 +20,17 @@ function cleanDist() {
   logger.success(`Created fresh ${distDir}`);
 }
 
-// 1) REGISTER CUSTOM TRANSFORM (v4 style: "transform")
+// 1) TRANSFORMERS
 // ----------------------------------------------------------------------------
-function kebabCase(str) {
-  return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
-}
-
-StyleDictionary.registerTransform({
-  name: "name/cti/kebab",
-  type: "name",
-  transform: (token) => kebabCase(token.name),
-});
-
 // Some built-in transforms
-const defaultTransforms = ["attribute/cti", "color/css", "size/px"];
+const defaultTransforms = [
+  "attribute/cti",
+  "color/css",
+  "size/px",
+  "name/kebab",
+];
 
-// 2) REGISTER A CUSTOM FILE HEADER
+// 2) FILE HEADERS
 // ----------------------------------------------------------------------------
 StyleDictionary.registerFileHeader({
   name: "doNotEditWarningHeader",
@@ -79,7 +74,7 @@ function jsify(value, indent = 2) {
   return String(value); // booleans, numbers, etc.
 }
 
-// 4) REGISTER CUSTOM FORMATS
+// 4) FORMATTERS
 // ----------------------------------------------------------------------------
 StyleDictionary.registerFormat({
   name: "css/index-file",
@@ -144,9 +139,9 @@ export default ${configObjectStr};
   },
 });
 
-// 5) BUILD SCRIPT
+// 5) BUILD SCRIPTS
 // ----------------------------------------------------------------------------
-async function buildTokens() {
+async function main() {
   cleanDist();
 
   // Base styles
@@ -182,7 +177,7 @@ async function buildTokens() {
         },
         tailwind: {
           transformGroup: "js",
-          transforms: ["attribute/cti", "name/kebab", "size/px", "color/css"],
+          transforms: defaultTransforms,
           buildPath: "build/tailwind/",
           files: [
             {
@@ -234,9 +229,7 @@ async function buildTokens() {
   logger.success("All builds finished!");
 }
 
-buildTokens().catch((err) => {
+main().catch((err) => {
   console.error("Error building tokens:", err);
   process.exit(1);
 });
-
-export default buildTokens;
