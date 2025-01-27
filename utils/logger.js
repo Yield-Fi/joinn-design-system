@@ -6,6 +6,9 @@ export const logger = {
   success(message) {
     console.log(`${BOLD}${GREEN}✔ ${message}${RESET}`);
   },
+  info(message) {
+    console.log(`${BOLD}ℹ ${message}${RESET}`);
+  },
 };
 
 export default logger;
