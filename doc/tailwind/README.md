@@ -11,8 +11,8 @@ The Joinn Design System repository uses **Style Dictionary** to produce **five**
 1. [**`base.css`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/base.css) – Contains global (light/base) CSS variables.
 2. [**`dark.css`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/dark.css) – Contains dark-mode CSS variables (using a `.dark` selector).
 3. [**`index.css`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/index.css) – Imports `base.css` and `dark.css` plus the Tailwind layers.
-4. [**`tailwind.base.js`**](./tailwind.base.js) – A **partial** Tailwind config automatically derived from tokens.
-5. [**`tailwind.config.js`**](./tailwind.config.js) – A **merged** config that imports `tailwind.base.js` and extends/overrides it (e.g., adding `content`, custom plugins, or brand overrides).
+4. [**`tailwind.base.js`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/tailwind.base.js) – A **partial** Tailwind config automatically derived from tokens.
+5. [**`tailwind.config.js`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/tailwind.config.js) – A **merged** config that imports `tailwind.base.js` and extends/overrides it (e.g., adding `content`, custom plugins, or brand overrides).
 
 You can **copy** these files from the Joinn Design System repo into your own project (e.g., place them in your root or `src/` folder) or pull them in via a package dependency. The **`base.css`, `dark.css`, `index.css`** files reside under **`build/tailwind/`** while **`tailwind.base.js`** and **`tailwind.config.js`** appear at the **root** of the repo.
 
