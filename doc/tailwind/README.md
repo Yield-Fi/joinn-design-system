@@ -1,19 +1,20 @@
 # Installing Joinn Design System
 
-This README provides instructions for integrating the **Joinn Design System** with **Tailwind CSS** in your project. The system outputs ready-to-use CSS files (for base and dark modes) plus a `tailwind.config.js`, ensuring consistent theming with minimal setup.
+This README provides instructions for integrating the **Joinn Design System** with **Tailwind CSS** in your project. The system outputs ready-to-use CSS files (for base and dark modes) plus **two** important Tailwind JS config files (`tailwind.base.js` and `tailwind.config.js`), ensuring consistent theming with minimal setup.
 
 ---
 
 ## 1. Obtain the Generated Artifacts
 
-The Joinn Design System repository uses **Style Dictionary** to produce **four** key outputs in **`build/tailwind/`**:
+The Joinn Design System repository uses **Style Dictionary** to produce **five** key outputs:
 
 1. [**`base.css`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/base.css) – Contains global (light/base) CSS variables.
 2. [**`dark.css`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/dark.css) – Contains dark-mode CSS variables (using a `.dark` selector).
 3. [**`index.css`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/index.css) – Imports `base.css` and `dark.css` plus the Tailwind layers.
-4. [**`tailwind.config.js`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/tailwind.config.js) – A Tailwind configuration file referencing the generated tokens.
+4. [**`tailwind.base.js`**](./tailwind.base.js) – A **partial** Tailwind config automatically derived from tokens.
+5. [**`tailwind.config.js`**](./tailwind.config.js) – A **merged** config that imports `tailwind.base.js` and extends/overrides it (e.g., adding `content`, custom plugins, or brand overrides).
 
-You can **copy** these files directly from the Joinn Design System repo’s **`build/tailwind/`** folder into your own project or **consume** them in a package/bundler (depending on how you manage dependencies).
+You can **copy** these files from the Joinn Design System repo into your own project (e.g., place them in your root or `src/` folder) or pull them in via a package dependency. The **`base.css`, `dark.css`, `index.css`** files reside under **`build/tailwind/`** while **`tailwind.base.js`** and **`tailwind.config.js`** appear at the **root** of the repo.
 
 ---
 
@@ -21,20 +22,26 @@ You can **copy** these files directly from the Joinn Design System repo’s **`b
 
 1. [**`index.css`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/index.css)
 
-   - This CSS file already imports `base.css` and `dark.css` at the top, then includes `@tailwind base; @tailwind components; @tailwind utilities;`.
-   - By default, it's auto-included under `src/` in the Joinn Design System, but if you want to manually include it, place `index.css` in your project’s `src/` folder (or wherever your main stylesheet resides).
+   - This CSS file already imports `base.css` and `dark.css`, then includes `@tailwind base; @tailwind components; @tailwind utilities;`.
+   - Copy `index.css` into your project (e.g. `src/index.css`) or wherever your main stylesheet resides.
 
-2. [**`tailwind.config.js`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/tailwind.config.js)
-   - The config extends Tailwind with the Joinn tokens. It’s set to `darkMode: "class"`.
-   - Place or reference this file as your primary Tailwind config when running your build or development server (e.g., `tailwindcss -c tailwind.config.js ...`).
+2. [**`tailwind.base.js`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/tailwind.base.js)
+
+   - This file is a **partial** Tailwind config containing **tokens** (colors, spacing, etc.) under `theme.extend`.
+   - You typically **don’t** run Tailwind using only `tailwind.base.js`—it’s a building block for the final `tailwind.config.js`.
+
+3. [**`tailwind.config.js`**](https://github.com/Yield-Fi/joinn-design-system/blob/main/build/tailwind/tailwind.config.js)
+   - The main Tailwind configuration that **imports** `tailwind.base.js` and merges it with additional settings (like the `content` array, plugins, or custom color overrides).
+   - Use **this** file as your **primary** config in your build commands (e.g. `npx tailwindcss -c tailwind.config.js ...`).
 
 ### Example Project Structure
 
 ```bash
 my-project/
   ├─ src/
-  │   └─ index.css           <-- Copied from build/tailwind/index.css
-  ├─ tailwind.config.js     <-- Copied from build/tailwind/tailwind.config.js
+  │   └─ index.css            <-- Copied from build/tailwind/index.css
+  ├─ tailwind.base.js         <-- Copied from build/tailwind/tailwind.base.js
+  ├─ tailwind.config.js       <-- Copied from build/tailwind/tailwind.config.js
   └─ ...
 ```
 
@@ -84,16 +91,27 @@ The Joinn Design System uses the `class` strategy for dark mode. To enable it in
 
 ## 6. Customize the Design System (Optional)
 
-The `tailwind.config.js` file can be extended to include your custom configurations. For example:
+Because tailwind.config.js merges tailwind.base.js with additional fields, you can extend or override as needed. For instance, to add custom plugins or colors:
 
 ```javascript
-module.exports = {
-  ...require("./tailwind.config.js"),
-  content: ["./src/**/*.{js,ts,jsx,tsx,html}"],
+/* tailwind.config.js */
+import base from "./tailwind.base.js";
+import typography from "@tailwindcss/typography";
+
+export default {
+  darkMode: base.darkMode,
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  plugins: [
+    typography,
+    // Add more plugins here if needed
+  ],
   theme: {
+    ...base.theme,
     extend: {
+      ...(base.theme?.extend || {}),
       colors: {
-        customColor: "#ff5733",
+        ...(base.theme?.extend?.colors || {}),
+        custom-color: "#A855F7", // Example custom color
       },
     },
   },
@@ -106,7 +124,7 @@ This ensures that you maintain the Joinn Design System's tokens while adding you
 
 ## 7. Verify Your Setup
 
-After completing the integration, verify that the design system is correctly applied by running your development server:
+After completing the integration, verify that the design system is correctly applied by running your development server e.g.
 
 ```bash
 npm run dev
@@ -119,7 +137,7 @@ Check your components to ensure that styles and tokens are being applied as expe
 ## 8. Additional Resources
 
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Joinn Design System GitHub Repository](https://github.com/your-repo-link)
+- [Joinn Design System GitHub Repository](https://github.com/Yield-Fi/joinn-design-system/blob/main/README.md)
 - [Style Dictionary Documentation](https://amzn.github.io/style-dictionary/)
 
 For further assistance, refer to the documentation or reach out to the Joinn team.
