@@ -51,7 +51,7 @@ my-project/
 
 ---
 
-## 3. Install Tailwind CSS and Necessary Dependencies
+## 3. Install Joinn Design System
 
 Ensure you have Tailwind CSS installed in your project. If not, you can install it using the following commands:
 
