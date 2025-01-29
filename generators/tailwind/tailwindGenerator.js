@@ -22,12 +22,38 @@ function cleanDist() {
 
 // 1) TRANSFORMERS
 // ----------------------------------------------------------------------------
+
+//A custom formatter to allow kebab-case names preserving camelCases i.e text-fontSize-sm
+/*
+It allows us to output valid tailwind classes like:
+fontFamily: {
+  base: "var(--typography-fontFamily-base)"
+}
+*/
+StyleDictionary.registerTransform({
+  name: "name/kebabWithCamel",
+  type: "name",
+  transform: (token) => token.path.join("-"),
+});
+
+//We use this in our tailwind config to convert camelCase to kebab-case for css vars only
+function camelToKebab(str) {
+  return str.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+}
+
 // Some built-in transforms
 const defaultTransforms = [
   "attribute/cti",
   "color/css",
   "size/px",
   "name/kebab",
+];
+
+const tailwindTransforms = [
+  "attribute/cti",
+  "color/css",
+  "size/px",
+  "name/kebabWithCamel",
 ];
 
 // 2) FILE HEADERS
@@ -151,7 +177,7 @@ StyleDictionary.registerFormat({
 
     // Insert tokens into partialConfig.theme.extend
     dictionary.allTokens.forEach((token) => {
-      const varRef = `var(--${token.name})`;
+      const varRef = `var(--${camelToKebab(token.name)})`;
       const segments = token.name.split("-");
       setNestedProperty(partialConfig.theme.extend, segments, varRef);
     });
@@ -244,7 +270,7 @@ async function main() {
         // 2) Tailwind partial + merged configs in the repo root
         tailwind: {
           transformGroup: "js",
-          transforms: defaultTransforms,
+          transforms: tailwindTransforms,
           buildPath: "build/tailwind/",
           files: [
             {

@@ -122,7 +122,7 @@
             "attributes": { "theme": "light" }
           }
         },
-        "grey": {
+        "gray": {
           "primary": {
             "$value": "rgba(107, 114, 128, 1)",
             "hex": "#6b7280",
@@ -217,7 +217,7 @@
             "attributes": { "theme": "light" }
           },
           "tertiary": {
-            "$value": "{themes.light.colors.grey.secondary.$value}",
+            "$value": "{themes.light.colors.gray.secondary.$value}",
             "attributes": { "theme": "light" }
           }
         },
@@ -227,11 +227,11 @@
             "attributes": { "theme": "light" }
           },
           "secondary": {
-            "$value": "{themes.light.colors.grey.primary.$value}",
+            "$value": "{themes.light.colors.gray.primary.$value}",
             "attributes": { "theme": "light" }
           },
           "tertiary": {
-            "$value": "{themes.light.colors.grey.secondary.$value}",
+            "$value": "{themes.light.colors.gray.secondary.$value}",
             "attributes": { "theme": "light" }
           },
           "accent": {
@@ -251,11 +251,11 @@
         },
         "border": {
           "primary": {
-            "$value": "{themes.light.colors.grey.primary.$value}",
+            "$value": "{themes.light.colors.gray.primary.$value}",
             "attributes": { "theme": "light" }
           },
           "secondary": {
-            "$value": "{themes.light.colors.grey.secondary.$value}",
+            "$value": "{themes.light.colors.gray.secondary.$value}",
             "attributes": { "theme": "light" }
           },
           "accent": {
@@ -269,7 +269,7 @@
             "attributes": { "theme": "light" }
           },
           "secondary": {
-            "$value": "{themes.light.colors.grey.secondary.$value}",
+            "$value": "{themes.light.colors.gray.secondary.$value}",
             "attributes": { "theme": "light" }
           }
         },
@@ -279,7 +279,7 @@
             "attributes": { "theme": "light" }
           },
           "muted": {
-            "$value": "{themes.light.colors.grey.primary.$value}",
+            "$value": "{themes.light.colors.gray.primary.$value}",
             "attributes": { "theme": "light" }
           },
           "accent": {
@@ -390,7 +390,7 @@
         },
         "progress": {
           "bg": {
-            "$value": "{themes.light.colors.grey.primary.$value}",
+            "$value": "{themes.light.colors.gray.primary.$value}",
             "attributes": { "theme": "light" }
           },
           "fill": {
@@ -403,7 +403,7 @@
           },
           "success": {
             "bg": {
-              "$value": "{themes.light.colors.grey.secondary.$value}",
+              "$value": "{themes.light.colors.gray.secondary.$value}",
               "attributes": { "theme": "light" }
             },
             "fill": {
@@ -417,7 +417,7 @@
           },
           "error": {
             "bg": {
-              "$value": "{themes.light.colors.grey.secondary.$value}",
+              "$value": "{themes.light.colors.gray.secondary.$value}",
               "attributes": { "theme": "light" }
             },
             "fill": {
@@ -431,7 +431,7 @@
           },
           "warning": {
             "bg": {
-              "$value": "{themes.light.colors.grey.secondary.$value}",
+              "$value": "{themes.light.colors.gray.secondary.$value}",
               "attributes": { "theme": "light" }
             },
             "fill": {
@@ -445,7 +445,7 @@
           },
           "info": {
             "bg": {
-              "$value": "{themes.light.colors.grey.secondary.$value}",
+              "$value": "{themes.light.colors.gray.secondary.$value}",
               "attributes": { "theme": "light" }
             },
             "fill": {
@@ -509,7 +509,7 @@
             "attributes": { "theme": "dark" }
           }
         },
-        "grey": {
+        "gray": {
           "primary": {
             "$value": "rgba(124, 124, 124, 1)",
             "hex": "#7c7c7c",
@@ -614,11 +614,11 @@
             "attributes": { "theme": "dark" }
           },
           "secondary": {
-            "$value": "{themes.dark.colors.grey.primary.$value}",
+            "$value": "{themes.dark.colors.gray.primary.$value}",
             "attributes": { "theme": "dark" }
           },
           "tertiary": {
-            "$value": "{themes.dark.colors.grey.secondary.$value}",
+            "$value": "{themes.dark.colors.gray.secondary.$value}",
             "attributes": { "theme": "dark" }
           },
           "accent": {
@@ -638,11 +638,11 @@
         },
         "border": {
           "primary": {
-            "$value": "{themes.dark.colors.grey.primary.$value}",
+            "$value": "{themes.dark.colors.gray.primary.$value}",
             "attributes": { "theme": "dark" }
           },
           "secondary": {
-            "$value": "{themes.dark.colors.grey.secondary.$value}",
+            "$value": "{themes.dark.colors.gray.secondary.$value}",
             "attributes": { "theme": "dark" }
           },
           "accent": {
@@ -656,7 +656,7 @@
             "attributes": { "theme": "dark" }
           },
           "secondary": {
-            "$value": "{themes.dark.colors.grey.secondary.$value}",
+            "$value": "{themes.dark.colors.gray.secondary.$value}",
             "attributes": { "theme": "dark" }
           }
         },
@@ -777,7 +777,7 @@
         },
         "progress": {
           "bg": {
-            "$value": "{themes.dark.colors.grey.primary.$value}",
+            "$value": "{themes.dark.colors.gray.primary.$value}",
             "attributes": { "theme": "dark" }
           },
           "fill": {
@@ -790,7 +790,7 @@
           },
           "success": {
             "bg": {
-              "$value": "{themes.dark.colors.grey.secondary.$value}",
+              "$value": "{themes.dark.colors.gray.secondary.$value}",
               "attributes": { "theme": "dark" }
             },
             "fill": {
@@ -804,7 +804,7 @@
           },
           "error": {
             "bg": {
-              "$value": "{themes.dark.colors.grey.secondary.$value}",
+              "$value": "{themes.dark.colors.gray.secondary.$value}",
               "attributes": { "theme": "dark" }
             },
             "fill": {
@@ -818,7 +818,7 @@
           },
           "warning": {
             "bg": {
-              "$value": "{themes.dark.colors.grey.secondary.$value}",
+              "$value": "{themes.dark.colors.gray.secondary.$value}",
               "attributes": { "theme": "dark" }
             },
             "fill": {
@@ -832,7 +832,7 @@
           },
           "info": {
             "bg": {
-              "$value": "{themes.dark.colors.grey.secondary.$value}",
+              "$value": "{themes.dark.colors.gray.secondary.$value}",
               "attributes": { "theme": "dark" }
             },
             "fill": {
