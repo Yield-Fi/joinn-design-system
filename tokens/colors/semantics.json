@@ -7,6 +7,7 @@
       "inverse": { "$value": "{colors.black.100}" }
     },
     "text": {
+      "base": { "$value": "{colors.black.100}" },
       "primary": { "$value": "{colors.black.100}" },
       "secondary": { "$value": "{colors.gray.900}" },
       "tertiary": { "$value": "{colors.gray.500}" },

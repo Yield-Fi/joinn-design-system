@@ -37,13 +37,15 @@ You can **copy** these files from the Joinn Design System repo into your own pro
 ### Example Project Structure
 
 ```bash
+my-project/
   ├─ src/
   │   ├─ styles/
-  │   │   ├─ base.css        <-- Copied from build/tailwind/base.css
-  │   │   └─ dark.css        <-- Copied from build/tailwind/dark.css
-  │   └─ index.css           <-- Copied from build/tailwind/index.css
-  ├─ tailwind.base.js        <-- Copied from build/tailwind/tailwind.base.js
-  ├─ tailwind.config.js      <-- Copied from build/tailwind/tailwind.config.js
+  │   │   └─ css/
+  │   │       ├─ base.css        <-- Copied from build/tailwind/base.css
+  │   │       └─ dark.css        <-- Copied from build/tailwind/dark.css
+  │   └─ index.css               <-- Copied from build/tailwind/index.css
+  ├─ tailwind.base.js            <-- Copied from build/tailwind/tailwind.base.js
+  ├─ tailwind.config.js          <-- Copied from build/tailwind/tailwind.config.js
   └─ ...
 ```
 
