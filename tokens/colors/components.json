@@ -2,9 +2,9 @@
   "colors": {
     "button": {
       "primary": {
-        "bg": { "$value": "{colors.background.primary}" },
-        "hover": { "$value": "{colors.background.secondary}" },
-        "text": { "$value": "{colors.text.primary}" }
+        "bg": { "$value": "{colors.black.100}" },
+        "hover": { "$value": "{colors.black.200}" },
+        "text": { "$value": "{colors.text.inverse}" }
       },
       "secondary": {
         "bg": { "$value": "{colors.background.secondary}" },

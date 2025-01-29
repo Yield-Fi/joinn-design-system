@@ -3,6 +3,7 @@
     "background": {
       "primary": { "$value": "{colors.white.100}" },
       "secondary": { "$value": "{colors.white.200}" },
+      "tertiary": { "$value": "{colors.white.300}" },
       "inverse": { "$value": "{colors.black.100}" }
     },
     "text": {
@@ -28,6 +29,7 @@
     "icon": {
       "primary": { "$value": "{colors.black.100}" },
       "muted": { "$value": "{colors.grey.100}" },
+      "inverse": { "$value": "{colors.white.100}" },
       "accent": { "$value": "{colors.blue.100}" }
     }
   },
