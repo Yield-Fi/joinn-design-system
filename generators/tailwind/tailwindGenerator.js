@@ -222,7 +222,6 @@ async function main() {
         // 1) CSS output
         base: {
           transformGroup: "css",
-          transforms: defaultTransforms,
           buildPath: "build/tailwind/",
           files: [
             {

@@ -41,6 +41,13 @@
       "normal": { "$value": "1.25" },
       "heading": { "$value": "1.1" },
       "tight": { "$value": "1" }
+    },
+
+    "letterSpacing": {
+      "$type": "dimension",
+      "normal": { "$value": "0em" },
+      "narrow": { "$value": "-0.5px" },
+      "wide": { "$value": "0.5px" }
     }
   }
 }

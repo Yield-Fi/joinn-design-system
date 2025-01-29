@@ -1,33 +1,33 @@
 {
   "colors": {
     "background": {
-      "primary": { "$value": "{colors.black.100.$value}" },
-      "secondary": { "$value": "{colors.black.200.$value}" },
-      "tertiary": { "$value": "{colors.black.300.$value}" }
+      "primary": { "$value": "{colors.black.100}" },
+      "secondary": { "$value": "{colors.black.200}" },
+      "tertiary": { "$value": "{colors.black.300}" }
     },
     "text": {
-      "primary": { "$value": "{colors.white.100.$value}" },
-      "secondary": { "$value": "{colors.grey.100.$value}" },
-      "tertiary": { "$value": "{colors.grey.200.$value}" },
-      "accent": { "$value": "{colors.blue.100.$value}" }
+      "primary": { "$value": "{colors.white.100}" },
+      "secondary": { "$value": "{colors.grey.100}" },
+      "tertiary": { "$value": "{colors.grey.200}" },
+      "accent": { "$value": "{colors.blue.100}" }
     },
     "surface": {
-      "primary": { "$value": "{colors.black.200.$value}" },
-      "secondary": { "$value": "{colors.black.100.$value}" }
+      "primary": { "$value": "{colors.black.200}" },
+      "secondary": { "$value": "{colors.black.100}" }
     },
     "border": {
-      "primary": { "$value": "{colors.grey.100.$value}" },
-      "secondary": { "$value": "{colors.grey.200.$value}" },
-      "accent": { "$value": "{colors.blue.100.$value}" }
+      "primary": { "$value": "{colors.grey.100}" },
+      "secondary": { "$value": "{colors.grey.200}" },
+      "accent": { "$value": "{colors.blue.100}" }
     },
     "separator": {
-      "primary": { "$value": "{colors.black.200.$value}" },
-      "secondary": { "$value": "{colors.grey.200.$value}" }
+      "primary": { "$value": "{colors.black.200}" },
+      "secondary": { "$value": "{colors.grey.200}" }
     },
     "icon": {
-      "primary": { "$value": "{colors.white.100.$value}" },
-      "muted": { "$value": "{colors.white.200.$value}" },
-      "accent": { "$value": "{colors.blue.100.$value}" }
+      "primary": { "$value": "{colors.white.100}" },
+      "muted": { "$value": "{colors.white.200}" },
+      "accent": { "$value": "{colors.blue.100}" }
     }
   },
   "shadow": {
