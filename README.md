@@ -1,15 +1,9 @@
-# Basic Style Dictionary
+# Joinn Design System
 
-This example code is bare-bones to show you what this framework can do. If you have the style-dictionary module installed globally, you can `cd` into this directory and run:
+Joinn Design System, leveraging Style Dictionary specified via a [DTCG compliant schema](https://styledictionary.com/info/tokens/)
 
-```bash
-npx style-dictionary build
-```
+![Screenshot 2025-01-24 at 3 50 50 pm](https://github.com/user-attachments/assets/dc8ee2ec-89bc-4d62-8147-997139c89583)
 
-Otherwise, install Style Dictionary locally for this project first, `cd` into this directory and run:
+## Supported Platforms
 
-```bash
-npm init -y && npm install style-dictionary
-```
-
-and then run the above command.
+- [React/Tailwind ](https://github.com/Yield-Fi/joinn-design-system/blob/main/docs/tailwind/README.md)
