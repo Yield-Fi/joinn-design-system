@@ -45,12 +45,12 @@
       },
       "success": {
         "bg": { "$value": "{colors.gray.800}" },
-        "fill": { "$value": "{colors.green.400}" },
+        "fill": { "$value": "{colors.state.success.primary}" },
         "hover": { "$value": "{colors.green.800}" }
       },
       "error": {
         "bg": { "$value": "{colors.gray.800}" },
-        "fill": { "$value": "{colors.red.400}" },
+        "fill": { "$value": "{colors.state.error.primary}" },
         "hover": { "$value": "{colors.red.800}" }
       }
     }

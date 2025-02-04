@@ -139,6 +139,20 @@ This ensures that you maintain the Joinn Design System's tokens while adding you
 
 ---
 
+## 8. Prevent linting/formatters from touching auto-generated files
+
+You might find errors in your CI such as 'base.css' isn't formatted to prettiers style guidelines, etc.
+
+So take note, you can ignore these files in prettier using a `.prettierignore`
+
+```
+src/styles/css/base.css
+src/styles/css/dark.css
+tailwind.base.js
+```
+
+---
+
 ## 7. Verify Your Setup
 
 After completing the integration, verify that the design system is correctly applied by running your development server e.g.

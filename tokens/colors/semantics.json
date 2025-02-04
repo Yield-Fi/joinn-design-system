@@ -32,6 +32,20 @@
       "muted": { "$value": "{colors.gray.100}" },
       "inverse": { "$value": "{colors.white.100}" },
       "accent": { "$value": "{colors.blue.1000}" }
+    },
+    "state": {
+      "error": {
+        "primary": { "$value": "{colors.red.1000}" }
+      },
+      "warning": {
+        "primary": { "$value": "{colors.yellow.1000}" }
+      },
+      "info": {
+        "primary": { "$value": "{colors.blue.1000}" }
+      },
+      "success": {
+        "primary": { "$value": "{colors.green.1000}" }
+      }
     }
   },
   "shadow": {
