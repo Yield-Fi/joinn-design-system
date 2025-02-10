@@ -35,16 +35,16 @@
     },
     "state": {
       "error": {
-        "primary": { "$value": "{colors.red.1000}" }
+        "primary": { "$value": "{colors.red.800}" }
       },
       "warning": {
-        "primary": { "$value": "{colors.yellow.1000}" }
+        "primary": { "$value": "{colors.yellow.800}" }
       },
       "info": {
-        "primary": { "$value": "{colors.blue.1000}" }
+        "primary": { "$value": "{colors.blue.800}" }
       },
       "success": {
-        "primary": { "$value": "{colors.green.1000}" }
+        "primary": { "$value": "{colors.green.800}" }
       }
     }
   },
