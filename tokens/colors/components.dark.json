@@ -39,7 +39,7 @@
     },
     "progress": {
       "primary": {
-        "bg": { "$value": "{colors.gray.1100}" },
+        "bg": { "$value": "{colors.gray.800}" },
         "fill": { "$value": "{colors.blue.1000}" },
         "hover": { "$value": "{colors.blue.800}" }
       },
