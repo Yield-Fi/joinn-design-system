@@ -9,7 +9,7 @@
     "text": {
       "base": { "$value": "{colors.black.100}" },
       "primary": { "$value": "{colors.black.100}" },
-      "secondary": { "$value": "{colors.gray.900}" },
+      "secondary": { "$value": "{colors.gray.800}" },
       "tertiary": { "$value": "{colors.gray.500}" },
       "inverse": { "$value": "{colors.white.200}" },
       "accent": { "$value": "{colors.blue.1000}" }
