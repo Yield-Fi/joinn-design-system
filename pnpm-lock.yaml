@@ -14,6 +14,9 @@ importers:
       style-dictionary:
         specifier: ^4.3.2
         version: 4.3.2
+      tinycolor2:
+        specifier: ^1.6.0
+        version: 1.6.0
 
 packages:
 

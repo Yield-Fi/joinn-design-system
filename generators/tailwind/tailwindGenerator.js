@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { logger } from "../../utils/logger.js";
+import tinycolor from "tinycolor2";
 
 import StyleDictionary from "style-dictionary";
 import { fileHeader } from "style-dictionary/utils";
@@ -22,7 +23,18 @@ function cleanDist() {
 
 // 1) TRANSFORMERS
 // ----------------------------------------------------------------------------
-
+//A custom formatter to allow valid css vars (0 0 0) for tailwind opacity classes
+//e.g bg-[rgb(var(--colors-background-inverse))]/80
+StyleDictionary.registerTransform({
+  name: "color/spaceRGB",
+  type: "value",
+  matcher: (token) => token.attributes?.category === "color",
+  transform: (token) => {
+    const { r, g, b } = tinycolor(token.value).toRgb();
+    // Return space-separated "r g b", e.g. "255 0 0"
+    return `${r} ${g} ${b}`;
+  },
+});
 //A custom formatter to allow kebab-case names preserving camelCases i.e text-fontSize-sm
 /*
 It allows us to output valid tailwind classes like:
@@ -44,17 +56,22 @@ function camelToKebab(str) {
 // Some built-in transforms
 const defaultTransforms = [
   "attribute/cti",
-  "color/css",
+  "color/spaceRGB",
   "size/px",
   "name/kebab",
 ];
 
 const tailwindTransforms = [
   "attribute/cti",
-  "color/css",
+  "color/spaceRGB",
   "size/px",
   "name/kebabWithCamel",
 ];
+
+StyleDictionary.registerTransformGroup({
+  name: "custom/cssSpaceRGB",
+  transforms: ["attribute/cti", "color/spaceRGB", "size/px", "name/kebab"],
+});
 
 // 2) FILE HEADERS
 // ----------------------------------------------------------------------------
@@ -177,7 +194,7 @@ StyleDictionary.registerFormat({
 
     // Insert tokens into partialConfig.theme.extend
     dictionary.allTokens.forEach((token) => {
-      const varRef = `var(--${camelToKebab(token.name)})`;
+      const varRef = `rgb(var(--${camelToKebab(token.name)}))`;
       const segments = token.name.split("-");
       setNestedProperty(partialConfig.theme.extend, segments, varRef);
     });
@@ -247,7 +264,7 @@ async function main() {
       platforms: {
         // 1) CSS output
         base: {
-          transformGroup: "css",
+          transformGroup: "custom/cssSpaceRGB",
           buildPath: "build/tailwind/",
           files: [
             {

@@ -5,7 +5,8 @@
   "type": "module",
   "dependencies": {
     "sd-tailwindcss-transformer": "^2.1.0",
-    "style-dictionary": "^4.3.2"
+    "style-dictionary": "^4.3.2",
+    "tinycolor2": "^1.6.0"
   },
   "scripts": {
     "generate": "yarn generate:tailwind",
