@@ -5,6 +5,11 @@ import tinycolor from "tinycolor2";
 
 import StyleDictionary from "style-dictionary";
 import { fileHeader } from "style-dictionary/utils";
+import {
+  logBrokenReferenceLevels,
+  logVerbosityLevels,
+  logWarningLevels,
+} from "style-dictionary/enums";
 
 // 0) CLEAN OUTPUT DIRECTORY
 // ----------------------------------------------------------------------------
@@ -69,8 +74,14 @@ const tailwindTransforms = [
 ];
 
 StyleDictionary.registerTransformGroup({
-  name: "custom/cssSpaceRGB",
-  transforms: ["attribute/cti", "color/spaceRGB", "size/px", "name/kebab"],
+  name: "custom/css",
+  transforms: [
+    "attribute/cti",
+    "color/spaceRGB",
+    "size/px",
+    "name/kebab",
+    "shadow/css/shorthand",
+  ],
 });
 
 // 2) FILE HEADERS
@@ -194,7 +205,6 @@ StyleDictionary.registerFormat({
 
     // Insert tokens into partialConfig.theme.extend
     dictionary.allTokens.forEach((token) => {
-      console.log(token);
       let cssRef;
       if (token.attributes?.category === "colors") {
         // color tokens are stored as numeric triple => use rgb(var(--...))
@@ -270,11 +280,17 @@ async function main() {
       source: [
         "tokens/**/!(*.dark).json", // all .json files that do NOT end with .dark.json
       ],
-      log: { verbosity: "verbose" },
+      log: {
+        warnings: logWarningLevels.warn, // 'warn' | 'error' | 'disabled'
+        verbosity: logVerbosityLevels.verbose, // 'default' | 'silent' | 'verbose'
+        errors: {
+          brokenReferences: logBrokenReferenceLevels.throw, // 'throw' | 'console'
+        },
+      },
       platforms: {
         // 1) CSS output
         base: {
-          transformGroup: "custom/cssSpaceRGB",
+          transformGroup: "custom/css",
           buildPath: "build/tailwind/",
           files: [
             {
