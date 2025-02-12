@@ -28,7 +28,7 @@ function cleanDist() {
 StyleDictionary.registerTransform({
   name: "color/spaceRGB",
   type: "value",
-  matcher: (token) => token.attributes?.category === "color",
+  matcher: (token) => token.attributes?.category === "colors",
   transform: (token) => {
     const { r, g, b } = tinycolor(token.value).toRgb();
     // Return space-separated "r g b", e.g. "255 0 0"
@@ -194,9 +194,19 @@ StyleDictionary.registerFormat({
 
     // Insert tokens into partialConfig.theme.extend
     dictionary.allTokens.forEach((token) => {
-      const varRef = `rgb(var(--${camelToKebab(token.name)}))`;
+      console.log(token);
+      let cssRef;
+      if (token.attributes?.category === "colors") {
+        // color tokens are stored as numeric triple => use rgb(var(--...))
+        cssRef = `rgb(var(--${camelToKebab(token.name)}))`;
+      } else {
+        // shadow or anything else => just var(--tokenName)
+        // (the actual value is already a final string from the transform)
+        cssRef = `var(--${camelToKebab(token.name)})`;
+      }
+
       const segments = token.name.split("-");
-      setNestedProperty(partialConfig.theme.extend, segments, varRef);
+      setNestedProperty(partialConfig.theme.extend, segments, cssRef);
     });
 
     const partialStr = jsify(partialConfig, 2);

@@ -1,5 +1,6 @@
 {
   "colors": {
+    "type": "color",
     "background": {
       "primary": { "value": "{colors.black.100}" },
       "secondary": { "value": "{colors.black.200}" },

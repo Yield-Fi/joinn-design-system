@@ -1,5 +1,6 @@
 {
   "colors": {
+    "$type": "color",
     "background": {
       "primary": { "value": "{colors.white.100}" },
       "secondary": { "value": "{colors.white.200}" },

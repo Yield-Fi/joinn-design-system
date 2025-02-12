@@ -1,5 +1,6 @@
 {
   "shadow": {
+    "$type": "shadow",
     "card": {
       "value": {
         "x": 0,
