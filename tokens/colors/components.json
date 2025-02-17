@@ -35,6 +35,11 @@
         "bg": { "value": "{colors.blue.400}" },
         "hover": { "value": "{colors.blue.800}" },
         "text": { "value": "{colors.white.100}" }
+      },
+      "link": {
+        "bg": { "value": "transparent" },
+        "hover": { "value": "{colors.blue.800}" },
+        "text": { "value": "{colors.blue.900}" }
       }
     },
     "progress": {
