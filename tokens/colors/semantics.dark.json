@@ -22,7 +22,8 @@
     "border": {
       "primary": { "value": "{colors.gray.1000}" },
       "secondary": { "value": "{colors.gray.600}" },
-      "accent": { "value": "{colors.blue.1000}" }
+      "accent": { "value": "{colors.blue.1000}" },
+      "inverse": { "value": "{colors.white.100}" }
     },
     "separator": {
       "primary": { "value": "{colors.black.200}" },
