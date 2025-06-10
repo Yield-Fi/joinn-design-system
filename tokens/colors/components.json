@@ -2,7 +2,8 @@
   "colors": {
     "button": {
       "primary": {
-        "bg": { "value": "{colors.black.100}" },
+        // "bg": { "value": "{colors.black.100}" },
+        "bg": { "value": "#0090ff"},
         "hover": { "value": "{colors.black.200}" },
         "text": { "value": "{colors.text.inverse}" }
       },
